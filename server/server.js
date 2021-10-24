@@ -8,9 +8,9 @@
 //   console.log(`Server listening on ${PORT}`);
 // });
 
-const prerender = require('prerender');
-const server = prerender();
-server.start();
+// const prerender = require('prerender');
+// const server = prerender();
+// server.start();
 
 
 
@@ -42,10 +42,10 @@ app.use("^/$", (req, res, next) => {
   });
 });
 
-// app.use(express.static(path.resolve(__dirname, '..', 'build')))
-app.use(
-    require("prerender-node").set("prerenderToken", '7Ulx7JiX3yGWkoqJqwFo')
-    );
+app.use(express.static(path.resolve(__dirname, '..', 'build')))
+// app.use(
+//     require("prerender-node").set("prerenderToken", '7Ulx7JiX3yGWkoqJqwFo')
+//     );
 
 app.listen(PORT, () => {
   console.log(`App launched on ${PORT}`);
