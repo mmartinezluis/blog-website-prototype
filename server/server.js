@@ -43,9 +43,9 @@ app.use("^/$", (req, res, next) => {
 });
 
 app.use(express.static(path.resolve(__dirname, '..', 'build')))
-// app.use(
-//     require("prerender-node").set("prerenderToken", '7Ulx7JiX3yGWkoqJqwFo')
-//     );
+app.use(
+    require("prerender-node").set("prerenderToken", process.env.REACT_APP_PRERENDER_TOKEN)
+    );
 
 app.listen(PORT, () => {
   console.log(`App launched on ${PORT}`);
