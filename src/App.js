@@ -33,17 +33,16 @@ function App() {
         </a>
       </header> */}
            <Helmet>
-                <meta property="og:title" content="Updated!!" />
                 <title>DevBlog</title>
+                <meta charset="utf-8" />
+                <meta property="og:title" content="Updated!!" />
                 <meta name="description" content="Blog website for coding related posts" />
                 <meta name="image" content="https://user-images.githubusercontent.com/75151961/138567246-01b18138-9eb4-4d64-973b-7965083a26a8.png" />
           </Helmet>
           <h1>HELLO</h1>
-          <>
           <p>{count}</p>
           <button onClick={increment}>Increment</button>
           <button onClick={decrement}>Decrement</button>
-          </>
     </div>
   );
 }
