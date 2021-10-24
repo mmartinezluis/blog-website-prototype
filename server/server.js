@@ -8,9 +8,9 @@
 //   console.log(`Server listening on ${PORT}`);
 // });
 
-// const prerender = require('prerender');
-// const server = prerender();
-// server.start();
+const prerender = require('prerender');
+const server = prerender();
+server.start();
 
 
 
