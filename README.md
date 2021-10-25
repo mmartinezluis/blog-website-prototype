@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 <!-- "ssr": "node server/index.js" -->
+This project attemps to render dynamic meta tags strating a create-react-app and using a Node JS server. The goal is to inject the meta tags to the code retrieved by search engines in the first render of hte page. Potential solutions under test include manual setup of server-side rendering during first request to the app's root url, and using react-helmet and prerender.io. Project is currrently deployed at [Server Side Rendering](https://server-side-rendering-seo.netlify.app/).
+
+The desired result is that the meta tags are present whnen sharing the url of a given route so that a preview image and a descrition of the shared page are included when sharing the link in social medial platforms.
+
+If you any solutions for solving this problem, please feel free to reach out to me. It will be appreciated. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
