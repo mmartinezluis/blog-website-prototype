@@ -35,9 +35,9 @@ function App() {
            <Helmet>
                 <title>DevBlog</title>
                 <meta charset="utf-8" />
-                {/* <meta property="og:title" content="Updated!!" />
+                <meta property="og:title" content="Updated!!" />
                 <meta name="description" content="Blog website for coding related posts" />
-                <meta name="image" content="https://user-images.githubusercontent.com/75151961/138567246-01b18138-9eb4-4d64-973b-7965083a26a8.png" /> */}
+                <meta name="image" content="https://user-images.githubusercontent.com/75151961/138567246-01b18138-9eb4-4d64-973b-7965083a26a8.png" />
 
                 <meta name="og:title" content="DevBlog" />
                 <meta name="og:description" content="Blog website for coding related posts. " />

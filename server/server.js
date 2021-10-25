@@ -1,12 +1,3 @@
-// const express = require("express");
-
-// const PORT = process.env.PORT || 3000;
-
-// const app = express();
-
-// app.listen(PORT, () => {
-//   console.log(`Server listening on ${PORT}`);
-// });
 
 const prerender = require('prerender');
 const server = prerender();
@@ -20,11 +11,9 @@ import path from "path";
 
 import React from "react";
 import ReactDOMServer from "react-dom/server";
-
 import App from "../src/App";
 
 const PORT = 8000;
-
 const app = express();
 
 app.use("^/$", (req, res, next) => {
@@ -42,7 +31,6 @@ app.use("^/$", (req, res, next) => {
   });
 });
 
-
 app.use(
   require("prerender-node").set("prerenderToken", process.env.REACT_APP_PRERENDER_TOKEN)
   );
@@ -55,3 +43,37 @@ app.listen(PORT, () => {
 });
 
 
+
+
+
+
+// app.get('/*', (req, res, next) => {
+//   fs.readFile(path.resolve("./build/index.html"), 'utf8', (err, htmlData) => {
+//       if (err) {
+//           console.error('Error during file reading', err);
+//           return res.status(404).end()
+//       }
+      // get post info
+      // const postId = req.query.id;
+      // const post = getPostById(postId);
+      // if(!post) return res.status(404).send("Post not found");
+
+      // inject meta tags
+//       htmlData = htmlData.replace(
+//           "<title>React App</title>",
+//           `<title>My Title</title>`
+//       )
+//       .replace('__META_OG_TITLE__', 'This is the OG title')
+//       .replace('__META_OG_DESCRIPTION__', 'post.description')
+//       .replace('__META_DESCRIPTION__', 'post.description')
+//       .replace('__META_OG_IMAGE__', 'post.thumbnail')
+//       return res.send(htmlData);
+//   });
+// });
+// listening...
+// app.listen(PORT, (error) => {
+//   if (error) {
+//       return console.log('Error during app startup', error);
+//   }
+//   console.log("listening on " + PORT + "...");
+// });
