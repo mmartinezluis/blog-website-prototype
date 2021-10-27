@@ -1,9 +1,8 @@
-
+         
+         // Im not sure if I have to run the below three lines for prerender.io to work
 const prerender = require('prerender');
 const server = prerender();
 server.start();
-
-
 
 import express from "express";
 import fs from "fs";
@@ -31,6 +30,7 @@ app.use("^/$", (req, res, next) => {
   });
 });
 
+// Is this the correct place for this line?
 app.use(
   require("prerender-node").set("prerenderToken", process.env.REACT_APP_PRERENDER_TOKEN)
   );
