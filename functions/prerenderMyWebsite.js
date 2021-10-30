@@ -1,9 +1,3 @@
-
-
-
-
-
-
 exports.handler = async function(event, context) {
     const prerender = require('prerender');
     const server = prerender();
