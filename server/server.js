@@ -1,9 +1,9 @@
          
          // Im not sure if I have to run the below three lines for prerender.io to work
-const prerender = require('prerender');
-const server = prerender();
-server.start();
-
+// const prerender = require('prerender');
+// const server = prerender();
+// server.start();
+require('dotenv').config();
 import express from "express";
 import fs from "fs";
 import path from "path";
@@ -14,6 +14,8 @@ import App from "../src/App";
 
 const PORT = 8000;
 const app = express();
+
+app.use(require("prerender-node").set("prerenderToken", process.env.REACT_APP_PRERENDER_TOKEN));
 
 app.use("^/$", (req, res, next) => {
   fs.readFile(path.resolve("./build/index.html"), "utf-8", (err, data) => {
@@ -31,9 +33,7 @@ app.use("^/$", (req, res, next) => {
 });
 
 // Is this the correct place for this line?
-app.use(
-  require("prerender-node").set("prerenderToken", process.env.REACT_APP_PRERENDER_TOKEN)
-  );
+
 
 app.use(express.static(path.resolve(__dirname, '..', 'build')))
 
