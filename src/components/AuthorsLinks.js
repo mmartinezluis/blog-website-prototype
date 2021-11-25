@@ -1,25 +1,20 @@
-import { Link, Routes, Route } from 'react-router-dom'
-import Author from './Author'
+import { Link } from 'react-router-dom'
 
 const AuthorsLinks = ({authors}) => {
     
-    const renderAuthors = authors.map( ({name, id}) => {
+    const renderAuthors = authors && authors.map( ({first_name, last_name, id}) => {
        return (
             <li key={id}>
-                <Link to={id} >
-                    {name}
+                <Link to={`${id}`} >
+                    {first_name} {last_name}
                 </Link>
-                {id}
             </li>
        ) 
     })
+
     return (
         <div>
             {renderAuthors}
-
-            <Routes>
-                <Route path=":authorId" element={ <Author />} />
-            </Routes>
         </div>
     )
 }
