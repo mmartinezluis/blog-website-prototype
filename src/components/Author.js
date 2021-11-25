@@ -6,7 +6,9 @@ function Author({authors}) {
     const currentAuthor = authors.find( ({id}) => `${id}` === authorId) 
     return (
         <div>
-            <h1>{currentAuthor.first_name}, Author Id: {authorId}</h1>
+            {currentAuthor &&
+                <h1>{currentAuthor.first_name}, Author Id: {authorId}</h1>
+            }
         </div>
     );
 }
