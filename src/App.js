@@ -2,31 +2,23 @@
 import './App.css';
 import React from "react";
 import { Helmet } from "react-helmet";
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
 
 function App() {
 
-  const [count, setCount] = React.useState(0);
-
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    setCount(count - 1);
-  };
-  
   return (
-    <div className="App">
-           <Helmet>
-                <title>Title from App Component</title>   
-                <meta name="description" content="Description from inside the App component" />
-          </Helmet>
-          <h1>HELLO</h1>
-          <p>{count}</p>
-          <button onClick={increment}>Increment</button>
-          <button onClick={decrement}>Decrement</button>
-    </div>
+    <Router>
+      <div className="App">
+            <Helmet>
+                  <title>Social Media Optimization</title>   
+                  <meta name="description" content="TExperimental App for SMO" />
+            </Helmet>
+            <Routes>
+              <Route path="/" element= {<Home />} />
+            </Routes>      
+      </div>
+    </Router>
   );
 }
 
