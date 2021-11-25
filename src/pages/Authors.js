@@ -14,7 +14,7 @@ function Authors() {
         <div>
             <Routes>
                 <Route path="" element={ <AuthorsLinks authors={authors} /> }/>
-                <Route path=":authorId" element= { <Author />} />
+                <Route path=":authorId" element= { <Author authors={authors} />} />
             </Routes>
         </div>
     )

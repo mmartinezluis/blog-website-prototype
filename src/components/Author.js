@@ -1,12 +1,13 @@
 import { useParams } from 'react-router-dom'
 
 
-function Author() {
+function Author({authors}) {
     const { authorId } = useParams();
-    console.log(useParams())
+    const currentAuthor = authors.find( author => author.id === authorId) 
+    
     return (
         <div>
-            <h1>Author id: {authorId}</h1>
+            <h1>{currentAuthor.name}, Author id: {authorId}</h1>
         </div>
     );
 }
