@@ -14,8 +14,7 @@ const AuthorsLinks = ({authors}) => {
 
     return (
         <div>
-            {authors &&
-            renderAuthors}
+            {renderAuthors}
         </div>
     )
 }

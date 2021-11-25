@@ -9,7 +9,7 @@ import axios from 'axios'
 
 function App() {
 
-  const [authors, setAuthors ] = useState([]);
+  const [authors, setAuthors ] = useState();
 
   useEffect(() => {
     console.log("useffect was called")
