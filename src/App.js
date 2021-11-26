@@ -62,6 +62,7 @@ function App() {
               <li>
               <h2><Link to="/posts">Posts</Link> </h2>
               </li>
+              <hr />
             </ul>
             <Routes>
                 <Route path="/" element= {<Home />} />

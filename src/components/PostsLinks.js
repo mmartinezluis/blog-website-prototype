@@ -6,7 +6,7 @@ function PostsLinks({posts}) {
             {posts && posts.map(({title, id}) => {
                 return (
                     <li key={id}>
-                        <Link to={id}>{title}</Link>
+                        <Link to={`${id}`}>{title}</Link>
                     </li>
                 )
             })}

@@ -1,14 +1,19 @@
-import { useParams } from "react-router";
+import React from "react";
+import { useParams } from "react-router-dom";
 
 function Post({posts}) {
-    const postId = useParams();
-    const post = posts && posts.find( ({id}) => id === postId )
+    const { postId } = useParams();
+    const post = posts && posts.find( ({id}) => `${id}` === postId )
+    console.log(post)
     return(
-        <div>
+        <React.Fragment>
             {post && 
-                <h1>{post.title}</h1>      
+                <div>
+                    <h1>{post.title}</h1>
+                    {post.body}
+                </div>
             }
-        </div>
+        </React.Fragment>
     );
 }
 

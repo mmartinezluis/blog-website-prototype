@@ -6,12 +6,9 @@ import Post from '../components/Post'
 function PostsPage({posts}) {
     return(
         <React.Fragment>
-            <PostsLinks posts = {posts} />
-            <Post posts = {posts} />
-
             <Routes>
-                <Route path="/*" element={<PostsLinks />} />
-                <Route path=":postId" element={<Post />} />
+                <Route path="/*" element={<PostsLinks posts = {posts} />} />
+                <Route path=":postId" element={<Post posts={posts} />} />
             </Routes>
         </React.Fragment>
     )
