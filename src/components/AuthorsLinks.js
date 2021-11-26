@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 
 const AuthorsLinks = ({authors}) => {
     
-    const renderAuthors = authors && authors.map( ({first_name, last_name, id}) => {
+    const renderAuthors = authors && authors.map( ({name, id}) => {
        return (
             <li key={id}>
                 <Link to={`${id}`} >
-                    {first_name} {last_name}
+                    {name} 
                 </Link>
             </li>
        ) 

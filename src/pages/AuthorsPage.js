@@ -4,12 +4,6 @@ import Author from '../components/Author'
 
 function Authors({authors}) {
 
-    // const authors = [
-    //     {name: "Charles Dickens", id: "1"},
-    //     {name: "Euler", id: "2"},
-    //     {name: "Warm Author", id: "3"}
-    // ]
-    
     return (
         <div>
             <Routes>
