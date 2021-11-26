@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import AuthorsLinks from '../components/AuthorsLinks';
 import Author from '../components/Author'
 
-function Authors({authors}) {
+function AuthorsPage({authors}) {
 
     return (
         <div>
@@ -14,4 +14,4 @@ function Authors({authors}) {
     )
 }
 
-export default Authors;
+export default AuthorsPage;

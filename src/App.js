@@ -4,8 +4,11 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import Home from './pages/HomePage'
-import Authors from './pages/AuthorsPage'
+import AuthorsPage from './pages/AuthorsPage'
+import PostsPage from './pages/PostsPage';
 // import axios from 'axios'
+import { mockAPI } from './mockApi/mockApi';
+
 
 function App() {
 
@@ -16,11 +19,20 @@ function App() {
   ]
 
   // const [authors, setAuthors ] = useState(authorsData);
+  const [posts, setPosts ] = useState();
 
-  // useEffect(() => {
-  //   console.log("useffect was called")
-  //   getAuthors()
-  // }, []);
+  useEffect(() => {
+    const request = {
+      method: 'get',
+      headers: {
+        'content-type' : 'application/json'
+      }
+    }
+    mockAPI(request).then((response) => {
+      setPosts(response.data.posts)
+    })
+    console.log(posts);
+  }, [posts]);
 
   // const getAuthors = () => {  
   //   axios.get("/users")
@@ -47,11 +59,14 @@ function App() {
               <li>
               <h2><Link to="/authors">Authors</Link> </h2>
               </li>
+              <li>
+              <h2><Link to="/posts">Posts</Link> </h2>
+              </li>
             </ul>
             <Routes>
                 <Route path="/" element= {<Home />} />
-                <Route path="/authors/*" element= {<Authors authors={authors}/>} />
-                {/* <Route path="/posts" element= {<Post />} /> */}
+                <Route path="/authors/*" element= {<AuthorsPage authors={authors}/>} />
+                <Route path="/posts/*" element= {<PostsPage posts ={posts} />} />
             </Routes>      
       </div>
     </Router>

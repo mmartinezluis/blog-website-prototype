@@ -1,0 +1,9 @@
+{
+    "posts" : [
+        {
+            "id": 1,
+            "title": "Deploying to Netlify",
+            "body": "In order to deploy your app to Netlify you will need..."
+        }
+    ]
+}
