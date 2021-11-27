@@ -5,9 +5,7 @@ const AuthorsLinks = ({authors}) => {
     const renderAuthors = authors && authors.map( ({name, id}) => {
        return (
             <li key={id}>
-                <Link to={`${id}`} >
-                    {name} 
-                </Link>
+                <h3><Link to={`${id}`} >{name} </Link></h3>
             </li>
        ) 
     })

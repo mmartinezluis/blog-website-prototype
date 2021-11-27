@@ -6,19 +6,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import Home from './pages/HomePage'
 import AuthorsPage from './pages/AuthorsPage'
 import PostsPage from './pages/PostsPage';
-// import axios from 'axios'
 import { mockAPI } from './mockApi/mockApi';
-
 
 function App() {
 
-  const authors = [
-    {name: "Charles Dickens", id: "1"},
-    {name: "Euler", id: "2"},
-    {name: "Warm Author", id: "3"}
-  ]
-
-  // const [authors, setAuthors ] = useState(authorsData);
+  const [authors, setAuthors ] = useState();
   const [posts, setPosts ] = useState();
 
   useEffect(() => {
@@ -30,20 +22,9 @@ function App() {
     }
     mockAPI(request).then((response) => {
       setPosts(response.data.posts)
+      setAuthors(response.data.authors)
     })
-    console.log(posts);
-  }, [posts]);
-
-  // const getAuthors = () => {  
-  //   axios.get("/users")
-  //     .then( (response) => {
-  //       setAuthors(response.data);
-  //     })
-  //     .catch( (error)=> {
-  //         console.log(error)
-  //     })
-  // }
-
+  }, [posts, authors]);
  
   return (
     <Router>

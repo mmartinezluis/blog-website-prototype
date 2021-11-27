@@ -3,12 +3,11 @@ let dataBase = require('../database/mockDatabase.json')
 export function mockAPI(request) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        //   debugger
         switch (request.method) {
           case 'get':
               resolve({ status: 200, data: dataBase });
             break;
-          case 'post':
+          case 'addPost':
               resolve({ status: 200, message: 'Added Post' });
             break;
           default:
@@ -17,6 +16,8 @@ export function mockAPI(request) {
       }, 3000);
     });
 }
+
+
 
 
 

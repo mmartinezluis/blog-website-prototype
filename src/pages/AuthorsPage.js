@@ -3,7 +3,6 @@ import AuthorsLinks from '../components/AuthorsLinks';
 import Author from '../components/Author'
 
 function AuthorsPage({authors}) {
-
     return (
         <div>
             <Routes>

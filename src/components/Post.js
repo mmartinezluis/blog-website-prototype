@@ -7,12 +7,14 @@ function Post({posts}) {
     console.log(post)
     return(
         <React.Fragment>
-            {post && 
+            {post ? (
                 <div>
                     <h1>{post.title}</h1>
                     {post.body}
                 </div>
-            }
+            ) : (
+                <strong>Loading post...</strong>
+            )}
         </React.Fragment>
     );
 }

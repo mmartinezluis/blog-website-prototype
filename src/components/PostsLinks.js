@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 function PostsLinks({posts}) {
     return(
         <div>
+            <Link to="new">New Post</Link>
             {posts && posts.map(({title, id}) => {
-                return (
+                return (  
                     <li key={id}>
-                        <Link to={`${id}`}>{title}</Link>
+                       <h2> <Link to={`${id}`}>{title}</Link></h2>
                     </li>
                 )
             })}

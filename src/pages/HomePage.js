@@ -1,5 +1,4 @@
 function Home() {
-
     return ( 
         <div>
             <h1>Blog Website Prototype</h1>
