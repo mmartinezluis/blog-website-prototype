@@ -1,13 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import Home from './pages/HomePage'
 import AuthorsPage from './pages/AuthorsPage'
 import PostsPage from './pages/PostsPage';
 import { mockAPI } from './mockApi/mockApi';
-
+import axios from 'axios'
 function App() {
 
   const [authors, setAuthors ] = useState();
@@ -24,15 +23,14 @@ function App() {
       setPosts(response.data.posts)
       setAuthors(response.data.authors)
     })
+    // axios.get("database/mockDatabase.json").then((response) => {
+    //   console.log(response)
+    // }).catch((error) => console.log(error))
   }, [posts, authors]);
  
   return (
     <Router>
       <div className="App">
-            <Helmet>
-                <title>App Page Meta Title</title>   
-                <meta name="description" content="TExperimental App for SMO" />
-            </Helmet>
             <ul>
               <li>
                 <h2><Link to="/">Home</Link></h2>

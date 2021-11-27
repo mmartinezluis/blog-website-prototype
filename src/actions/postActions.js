@@ -1,28 +1,36 @@
 import { mockAPI } from "../mockApi/mockApi";
 
-export function fetchPosts() {
+export function addPost(postData) {
     const request = {
-        method: 'get',
-        headers: {
-            'Content-type' : 'application/json'
+        method: 'addPost',
+        body: {
+            title: postData.slice(0,10),
+            body: postData
         }
     }
-    mockAPI(request).then( (response) => {
-        console.log(response.data.posts)
-    })
-    
-
+    mockAPI(request)
+      .then((response) => {
+          console.log(response)
+      })
+      .catch((error) => {
+          console.log(error)
+      })
 }
 
-
-
-export function addPost() {
-
+export function editPost(postData) {
+    const request = {
+        method: 'addPost',
+        body: {
+            title: postData.slice(0,10),
+            body: postData
+        }
+    }
+    mockAPI(request)
+      .then((response) => {
+          console.log(response.data)
+      })
+      .catch((error) => {
+          console.log(error)
+      })
 }
 
-
-
-
-export function editPost() {
-
-}

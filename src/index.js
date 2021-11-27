@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import axios from 'axios'
 // import reportWebVitals from './reportWebVitals';
-axios.defaults.baseURL = process.env.REACT_APP_BASE_API_URL
 
 ReactDOM.render(<App />,document.getElementById('root'));
 

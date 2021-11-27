@@ -15,7 +15,7 @@ import App from "../src/App";
 const PORT = 8000;
 const app = express();
 
-app.use(require("prerender-node").set("prerenderToken", process.env.REACT_APP_PRERENDER_TOKEN));
+// app.use(require("prerender-node").set("prerenderToken", process.env.REACT_APP_PRERENDER_TOKEN));
 
 app.use("^/$", (req, res, next) => {
   fs.readFile(path.resolve("./build/index.html"), "utf-8", (err, data) => {
