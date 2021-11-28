@@ -26,7 +26,7 @@ export function mockAPI(request) {
           default:
             resolve({ status: 400, message: 'Bad Request' });
         }
-      }, 3000);
+      }, 300);
     });
 }
 

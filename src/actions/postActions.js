@@ -4,7 +4,7 @@ export function addPost(endpoint, postData, navigate) {
     axios.post("http://localhost:8080/" + endpoint, postData)
       .then((response) => {
           console.log(response)
-          navigate(`../${response.data.id}`, {replace: true})
+          navigate(`../${response.data.id}`)
       })
       .catch((error) => {
           console.log(error)
@@ -20,5 +20,13 @@ export function editPost(endpoint, postData, navigate) {
       .catch((error) => {
           console.log(error)
       })
+}
+
+export function deletePost(postId, navigate) {
+    axios.delete("http://localhost:8080/posts/" + postId)
+        .then((response) => {
+            console.log(response)
+            navigate("../", {replace: true})
+        }).catch(error => console.log(error))
 }
 

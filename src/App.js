@@ -6,30 +6,22 @@ import Home from './pages/HomePage'
 import AuthorsPage from './pages/AuthorsPage'
 import PostsPage from './pages/PostsPage';
 import { mockAPI } from './mockApi/mockApi';
-import axios from 'axios'
+
 function App() {
 
   const [authors, setAuthors ] = useState();
   const [posts, setPosts ] = useState();
 
   useEffect(() => {
-    // const request = {
-    //   method: 'get',
-    //   headers: {
-    //     'content-type' : 'application/json'
-    //   }
-    // }
-    // mockAPI(request).then((response) => {
-      axios.get("http://localhost:8080/posts")
-        .then((response) => {
-          setPosts(response.data)
-        }).catch(error => console.log(error))
-      // setAuthors(response.data.authors)
-    // })
-    // axios.get("database/mockDatabase.json").then((response) => {
-    //   console.log(response)
-    // }).catch((error) => console.log(error))
-  }, []);
+    const request = {
+      method: 'get',
+    }
+    mockAPI(request).then((response) => {
+      console.log(response)
+      setPosts(response.data.posts)
+      setAuthors(response.data.authors)
+    })
+  },[]);
  
   return (
     <Router>
