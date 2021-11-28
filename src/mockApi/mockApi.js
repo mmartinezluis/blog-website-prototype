@@ -1,4 +1,4 @@
-let dataBase = require('../db..json')
+let dataBase = require('../db.json')
 const fs = require('fs')
 
 export function mockAPI(request) {

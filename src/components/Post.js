@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import Interweave from 'interweave'
 
 function Post({posts}) {
     const { postId } = useParams();
@@ -7,15 +8,16 @@ function Post({posts}) {
     
     return(
         <React.Fragment>
-            {post ? (
+            {post &&
                 <div>
                     <Link to="edit" >Edit</Link>
                     <h1>{post.title}</h1>
-                    {post.body}
+                    <Interweave  content={post.body} />
                 </div>
-            ) : (
-                <strong>Loading post...</strong>
-            )}
+            // ) : (
+            //     <strong>Loading post...</strong>
+            // )
+            }
         </React.Fragment>
     );
 }

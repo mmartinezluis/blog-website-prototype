@@ -13,36 +13,39 @@ function App() {
   const [posts, setPosts ] = useState();
 
   useEffect(() => {
-    const request = {
-      method: 'get',
-      headers: {
-        'content-type' : 'application/json'
-      }
-    }
-    mockAPI(request).then((response) => {
-      setPosts(response.data.posts)
-      setAuthors(response.data.authors)
-    })
+    // const request = {
+    //   method: 'get',
+    //   headers: {
+    //     'content-type' : 'application/json'
+    //   }
+    // }
+    // mockAPI(request).then((response) => {
+      axios.get("http://localhost:8080/posts")
+        .then((response) => {
+          setPosts(response.data)
+        }).catch(error => console.log(error))
+      // setAuthors(response.data.authors)
+    // })
     // axios.get("database/mockDatabase.json").then((response) => {
     //   console.log(response)
     // }).catch((error) => console.log(error))
-  }, [posts, authors]);
+  }, []);
  
   return (
     <Router>
       <div className="App">
-            <ul>
-              <li>
-                <h2><Link to="/">Home</Link></h2>
-              </li>
-              <li>
-              <h2><Link to="/authors">Authors</Link> </h2>
-              </li>
-              <li>
-              <h2><Link to="/posts">Posts</Link> </h2>
-              </li>
-              <hr />
-            </ul>
+            <nav style={{ margin: 20 }}>
+                <Link to="/" style={{ padding: 20 }}>
+                  Home
+                </Link>
+                <Link to="/posts" style={{ padding: 20 }}>
+                  Posts
+                </Link> 
+                <Link to="/authors" style={{ padding: 20 }}>
+                  Authors
+                </Link> 
+            </nav>
+             <hr />
             <Routes>
                 <Route path="/" element= {<Home />} />
                 <Route path="/authors/*" element= {<AuthorsPage authors={authors}/>} />

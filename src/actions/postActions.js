@@ -1,33 +1,21 @@
-import { mockAPI } from "../mockApi/mockApi";
+import axios from 'axios'
 
-export function addPost(postData) {
-    const request = {
-        method: 'addPost',
-        body: {
-            title: postData.slice(0,10),
-            body: postData
-        }
-    }
-    mockAPI(request)
+export function addPost(endpoint, postData, navigate) {
+    axios.post("http://localhost:8080/" + endpoint, postData)
       .then((response) => {
           console.log(response)
+          navigate(`../${response.data.id}`, {replace: true})
       })
       .catch((error) => {
           console.log(error)
       })
 }
 
-export function editPost(postData) {
-    const request = {
-        method: 'addPost',
-        body: {
-            title: postData.slice(0,10),
-            body: postData
-        }
-    }
-    mockAPI(request)
+export function editPost(endpoint, postData, navigate) {
+    axios.put("http://localhost:8080/posts/" + endpoint, postData)
       .then((response) => {
-          console.log(response.data)
+          console.log(response)
+          navigate(`../${endpoint}`, {replace: true})
       })
       .catch((error) => {
           console.log(error)
