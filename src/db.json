@@ -1,14 +1,19 @@
 {
   "posts": [
     {
-      "title": "hello there",
-      "body": "<p>hi awwesome!!!!!!!!!!!</p>\n",
+      "title": "nice!!!!!!",
+      "body": "<p>hi awwesome!!!!!!!!!!!</p>",
       "id": 1
     },
     {
       "title": "Wysiwig Editor",
       "body": "<p>How do you like the editor?</p>\n",
       "id": 2
+    },
+    {
+      "title": "Newest Post",
+      "body": "<p>fdfsdfdsfdsf</p>\n",
+      "id": 3
     }
   ],
   "authors": [
