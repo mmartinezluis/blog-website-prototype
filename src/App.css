@@ -1,6 +1,7 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
+  /* text-align: center; */
+  margin: 50px 80px 50px 80px ;
 }
 
 .textEditor {

@@ -4,6 +4,11 @@
       "title": "hello there",
       "body": "<p>hi awwesome!!!!!!!!!!!</p>\n",
       "id": 1
+    },
+    {
+      "title": "Wysiwig Editor",
+      "body": "<p>How do you like the editor?</p>\n",
+      "id": 2
     }
   ],
   "authors": [
