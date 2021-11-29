@@ -14,7 +14,7 @@ function Home() {
                 simoultanesly so that the visitor of the codesanbox does not need to run any 
                 scripts for the app to start working. To achieve this, the app uses the 
                 concurretly npm package for running multiple commands concurrenltly when starting the
-                app. If you go to 
+                app. [more info upcoming ...]
             </p>
 
         </div>

@@ -1,18 +1,18 @@
 {
   "posts": [
     {
-      "title": "nice!!!!!!",
+      "title": "Deploying to Netlify",
       "body": "<p>hi awwesome!!!!!!!!!!!</p>",
       "id": 1
     },
     {
-      "title": "Wysiwig Editor",
-      "body": "<p>How do you like the editor?</p>\n",
+      "title": "Wysiwig Editor5",
+      "body": "<p>How do you like the editor?</p>",
       "id": 2
     },
     {
-      "title": "Newest Post",
-      "body": "<p>fdfsdfdsfdsf</p>\n",
+      "title": "dfsfdf",
+      "body": "<p>fd</p>\n",
       "id": 3
     }
   ],
