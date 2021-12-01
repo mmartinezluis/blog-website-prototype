@@ -26,3 +26,12 @@
 .toolbar-class {
   border: 1px solid lightgray;
 }
+
+pre {
+  /* This line ensures that the code snippets do not overflow their respective container */
+  white-space: pre-wrap;
+  padding: 1rem;
+  background-color: rgba(242, 242, 242, 1);
+  font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+  font-size: 16px;
+}
