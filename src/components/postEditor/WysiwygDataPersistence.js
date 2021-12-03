@@ -9,7 +9,7 @@ import { useParams, useLocation, useNavigate  } from "react-router-dom";
 import { addPost, editPost } from "../../actions/postActions";
 import { validPost } from './validator'
 
-function WysiwygEditorDataPersistance({posts}) {
+function WysiwygDataPersistence({posts}) {
   
     const routeParams = useParams();
     const location  = useLocation();
@@ -20,7 +20,7 @@ function WysiwygEditorDataPersistance({posts}) {
         () => {
             if(location.pathname === "/posts/new") {
                 return EditorState.createEmpty();
-            } else if(routeParams.postId){
+            } else if(routeParams.postId && posts){
                 const currentPost = posts && posts.find( ({id}) => `${id}`=== routeParams.postId)
                 setTitle(currentPost.title)
                 return EditorState.createWithContent(convertFromHTML(currentPost.body))
@@ -91,6 +91,6 @@ function WysiwygEditorDataPersistance({posts}) {
     );
 }
 
-export default WysiwygEditorDataPersistance;
+export default WysiwygDataPersistence;
 
 

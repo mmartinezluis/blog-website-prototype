@@ -9,19 +9,19 @@ import { useParams, useLocation, useNavigate  } from "react-router-dom";
 import { addPost, editPost } from "../../actions/postActions";
 import { validPost } from './validator'
 
-function WysiwygEditorDataPersistance({posts}) {
+function WysiwygStable({posts}) {
   
     const routeParams = useParams();
     const location  = useLocation();
     const navigate = useNavigate();
     const [title, setTitle] = useState("");
-    const [draftOrPost, setDraftOrPost] = useState({body: "<p>Loding content...</p>"})
+    const [post, setPost] = useState({body: "<p>Loading content...</p>"})
 
-    const loadedDraftOrPost = useCallback( () => {         
-        return posts.find( post => `${post.id}` === routeParams.postId)
+    const loadedPost = useCallback( () => {         
+        return posts && posts.find( post => `${post.id}` === routeParams.postId)
     },[posts, routeParams])
 
-    const loadedInitialEditorState = useCallback( () => (EditorState.createWithContent(convertFromHTML(draftOrPost.body))),[draftOrPost])
+    const loadedInitialEditorState = useCallback( () => (EditorState.createWithContent(convertFromHTML(post.body))),[post])
 
     const reinitializeState = useCallback ((argument) => {
         const blocksFromHTML = htmlToDraft(argument?.body);
@@ -31,12 +31,13 @@ function WysiwygEditorDataPersistance({posts}) {
     },[])
 
     useEffect( () => {
-        if (location.pathname !== "/posts/new") {
-            const content = loadedDraftOrPost()
-            setDraftOrPost(content)
+        if (location.pathname !== "/posts/new" && posts) {
+            const content = loadedPost()
+            setTitle(content.title)
+            setPost(content)
             setEditorState(reinitializeState(content))
         }
-      },[location, loadedDraftOrPost, reinitializeState, draftOrPost]
+      },[location, loadedPost, reinitializeState, posts]
     )
 
     const [editorState, setEditorState] = useState( 
@@ -65,7 +66,7 @@ function WysiwygEditorDataPersistance({posts}) {
     }
 
     function update() {
-        const body = draftToHtml(convertToRaw(editorState.getCurrentContent())).trim()
+        const body = draftToHtml(convertToRaw(editorState.getCurrentContent()))
         const id = routeParams.postId;
         console.log(title)
         console.log(body)
@@ -111,6 +112,6 @@ function WysiwygEditorDataPersistance({posts}) {
     );
 }
 
-export default WysiwygEditorDataPersistance;
+export default WysiwygStable;
 
 
